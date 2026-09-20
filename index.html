@@ -58,6 +58,21 @@ section{padding:95px 0;border-top:1px solid rgba(255,255,255,.055)}
 .contact{text-align:center}.contact .desc{margin:0 auto}
 footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:center;color:#65748a;font-size:13px}
 @media(max-width:850px){.links{display:none}.hero-wrap{flex-direction:column;align-items:flex-start}.profile-wrap{display:none}.grid2,.grid3,.project-grid,.tech-grid,.edu-grid,.cert-grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero{min-height:auto}.hero-content{padding:70px 0}section{padding:75px 0}}
+  .profile-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    min-width: 320px;
+}
+
+.profile-photo {
+    width: 300px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.35));
+}
 </style>
 </head>
 <body>
@@ -86,7 +101,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:cent
 </div>
 <div class="profile-wrap">
  <img
-  src="images/profile-executive.png"
+  src="profile-executive.png"
   class="profile-photo"
   alt="Sandesh Sarfare"
 />
