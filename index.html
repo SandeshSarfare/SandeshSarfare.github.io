@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sandesh Sarfare | Principal Software Engineer</title>
+    <title>Sandesh Sarfare | Principal Software Engineer & Solution Architect</title>
 
-    <meta name="description"
-          content="Sandesh Sarfare - Principal Software Engineer and Solution Architect specializing in .NET, Cloud, AWS, Azure, AI and distributed systems.">
+    <meta
+        name="description"
+        content="Sandesh Sarfare - Principal Software Engineer and Solution Architect specializing in .NET, cloud architecture, distributed systems, AI and enterprise platforms."
+    />
 
     <style>
+        :root {
+            --bg: #070b14;
+            --bg-soft: #0d1320;
+            --card: #101827;
+            --card-hover: #141f31;
+            --border: #202c3d;
+            --text: #f3f4f6;
+            --muted: #9aa7b8;
+            --blue: #60a5fa;
+            --blue-bright: #3b82f6;
+            --cyan: #67e8f9;
+            --green: #6ee7b7;
+            --max-width: 1180px;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -21,11 +38,26 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-            line-height: 1.6;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 70% 10%,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.7;
         }
 
         a {
@@ -34,212 +66,634 @@
         }
 
         .container {
-            width: min(1100px, 90%);
+            width: min(var(--max-width), 90%);
             margin: auto;
         }
 
-        /* Navigation */
+        /* ---------------- NAVIGATION ---------------- */
 
         nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1f2937;
-            backdrop-filter: blur(10px);
+            z-index: 1000;
+
+            background: rgba(7, 11, 20, 0.82);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .nav-container {
-            height: 70px;
+        .nav-inner {
+            height: 72px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 750;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--blue);
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 28px;
         }
 
         .nav-links a {
-            color: #9ca3af;
-            transition: 0.2s;
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.25s;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: var(--text);
         }
 
-        /* Hero */
+        /* ---------------- HERO ---------------- */
 
         .hero {
-            min-height: 90vh;
+            min-height: calc(100vh - 72px);
+
             display: flex;
             align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 500px;
+            height: 500px;
+
+            right: -180px;
+            top: 50px;
+
+            background: rgba(59, 130, 246, 0.10);
+            filter: blur(100px);
+            border-radius: 50%;
         }
 
         .hero-content {
-            max-width: 850px;
+            position: relative;
+            max-width: 1000px;
+            padding: 90px 0;
         }
 
-        .tag {
-            display: inline-block;
+        .eyebrow {
+            display: inline-flex;
+
             padding: 7px 14px;
-            border: 1px solid #374151;
-            border-radius: 20px;
+
+            border: 1px solid #26364d;
+            border-radius: 999px;
+
             color: #93c5fd;
-            margin-bottom: 25px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            background: rgba(15, 23, 42, 0.6);
+
+            margin-bottom: 26px;
         }
 
-        h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 20px;
+        .hero h1 {
+            max-width: 1000px;
+
+            font-size: clamp(44px, 7vw, 82px);
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 28px;
         }
 
-        .hero h2 {
-            font-size: clamp(22px, 3vw, 32px);
-            font-weight: 500;
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #f3f4f6,
+                #93c5fd,
+                #67e8f9
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: 600;
+
             color: #93c5fd;
-            margin-bottom: 25px;
+
+            margin-bottom: 22px;
         }
 
-        .hero p {
-            font-size: 19px;
-            color: #9ca3af;
-            max-width: 750px;
+        .hero-description {
+            max-width: 800px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+            line-height: 1.8;
+
             margin-bottom: 35px;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 13px;
             flex-wrap: wrap;
         }
 
         .button {
-            padding: 12px 22px;
-            border-radius: 8px;
-            border: 1px solid #374151;
-            transition: 0.2s;
-        }
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-        .button.primary {
-            background: #2563eb;
-            border-color: #2563eb;
-            color: white;
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            border: 1px solid var(--border);
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition:
+                transform 0.2s,
+                background 0.2s,
+                border 0.2s;
         }
 
         .button:hover {
             transform: translateY(-2px);
+            border-color: #3b4d66;
         }
 
-        /* Sections */
+        .button-primary {
+            background: var(--blue-bright);
+            border-color: var(--blue-bright);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #2563eb;
+        }
+
+        /* ---------------- SECTIONS ---------------- */
 
         section {
-            padding: 90px 0;
-            border-top: 1px solid #1f2937;
+            padding: 105px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.055);
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: 36px;
-            margin-bottom: 15px;
+            font-size: clamp(30px, 4vw, 44px);
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
         }
 
         .section-description {
-            color: #9ca3af;
-            margin-bottom: 40px;
-            max-width: 750px;
+            max-width: 780px;
+            color: var(--muted);
+            font-size: 17px;
         }
 
-        /* Cards */
+        /* ---------------- ABOUT ---------------- */
 
-        .grid {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 30px;
+        }
+
+        .about-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            padding: 32px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .stat {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .stat-number {
+            font-size: 27px;
+            font-weight: 750;
+            color: var(--text);
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ---------------- EXPERTISE ---------------- */
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .expertise-card {
+            padding: 27px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16, 24, 39, 0.95),
+                    rgba(11, 18, 30, 0.95)
+                );
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            transition:
+                transform 0.25s,
+                border 0.25s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            border-color: #344b68;
+        }
+
+        .expertise-icon {
+            font-size: 27px;
+            margin-bottom: 16px;
+        }
+
+        .expertise-card h3 {
+            margin-bottom: 9px;
+            font-size: 18px;
+        }
+
+        .expertise-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ---------------- EXPERIENCE ---------------- */
+
+        .timeline {
+            position: relative;
+            max-width: 950px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            bottom: 5px;
+
+            width: 1px;
+
+            background: #29384d;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 42px;
+            margin-bottom: 55px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 3px;
+            top: 7px;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+            box-shadow: 0 0 0 5px var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 23px;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            color: #cbd5e1;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        /* ---------------- PROJECTS ---------------- */
+
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
-        .card {
-            padding: 25px;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            background: #111827;
+        .project-card {
+            padding: 30px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            transition:
+                transform 0.25s,
+                border 0.25s;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-            color: white;
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #3a5270;
         }
 
-        .card p {
-            color: #9ca3af;
+        .project-number {
+            color: #52647c;
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 18px;
         }
 
-        /* Skills */
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
 
-        .skills {
+        .project-card p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 7px;
         }
 
-        .skill {
-            padding: 8px 14px;
-            border: 1px solid #374151;
-            border-radius: 20px;
-            color: #d1d5db;
+        .project-tag {
+            padding: 5px 9px;
+
+            border: 1px solid #29384d;
+            border-radius: 6px;
+
+            color: #a9b8ca;
+            font-size: 12px;
         }
 
-        /* Experience */
+        /* ---------------- TECHNOLOGY ---------------- */
 
-        .experience {
-            border-left: 2px solid #374151;
-            padding-left: 25px;
-            margin-bottom: 35px;
+        .tech-groups {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
         }
 
-        .experience h3 {
-            font-size: 23px;
+        .tech-group {
+            padding: 25px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
         }
 
-        .experience .company {
-            color: #93c5fd;
-            margin: 5px 0;
-        }
-
-        .experience .date {
-            color: #6b7280;
+        .tech-group h3 {
             margin-bottom: 15px;
+            font-size: 17px;
         }
 
-        /* Footer */
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech {
+            padding: 7px 11px;
+
+            background: #0b1321;
+            border: 1px solid #26364d;
+
+            border-radius: 7px;
+
+            color: #c7d2df;
+            font-size: 13px;
+        }
+
+        /* ---------------- ARCHITECTURE ---------------- */
+
+        .architecture {
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(13, 19, 32, 0.7),
+                    rgba(7, 11, 20, 0.7)
+                );
+        }
+
+        .architecture-box {
+            padding: 45px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background: #0b1220;
+
+            overflow-x: auto;
+        }
+
+        .architecture-flow {
+            min-width: 700px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .architecture-node {
+            padding: 18px 20px;
+
+            border: 1px solid #30445e;
+            border-radius: 10px;
+
+            background: #111b2b;
+
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .architecture-node strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .architecture-node small {
+            color: var(--muted);
+        }
+
+        .arrow {
+            color: var(--blue);
+            font-size: 22px;
+        }
+
+        /* ---------------- CONTACT ---------------- */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact-content .section-description {
+            margin: 0 auto 30px;
+        }
+
+        /* ---------------- FOOTER ---------------- */
 
         footer {
-            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 35px 0;
+
+            color: #64748b;
+            font-size: 13px;
             text-align: center;
-            color: #6b7280;
-            border-top: 1px solid #1f2937;
         }
 
-        /* Mobile */
+        /* ---------------- ANIMATION ---------------- */
 
-        @media (max-width: 700px) {
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 850px) {
+
             .nav-links {
                 display: none;
             }
 
-            .grid {
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-grid,
+            .expertise-grid,
+            .projects-grid,
+            .tech-groups {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                min-height: 80vh;
+            .architecture-box {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero-content {
+                padding: 65px 0;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .about-card,
+            .project-card,
+            .expertise-card {
+                padding: 22px;
+            }
+
+            .hero-description {
+                font-size: 16px;
             }
         }
     </style>
@@ -247,264 +701,751 @@
 
 <body>
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
-    <div class="container nav-container">
-        <div class="logo">Sandesh Sarfare</div>
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            Sandesh<span>.</span>
+        </a>
 
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
             <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#technology">Technology</a>
             <a href="#contact">Contact</a>
         </div>
+
     </div>
 </nav>
 
+
 <main>
 
-    <!-- HERO -->
+<!-- ================= HERO ================= -->
 
-    <section class="hero">
-        <div class="container hero-content">
+<section class="hero">
 
-            <div class="tag">
-                Principal Software Engineer · Solution Architect
+    <div class="container hero-content fade-in">
+
+        <div class="eyebrow">
+            Principal Software Engineer · Solution Architect
+        </div>
+
+        <h1>
+            Building
+            <span class="gradient-text">
+                cloud-native,
+                distributed
+            </span>
+            and AI-enabled platforms.
+        </h1>
+
+        <div class="hero-subtitle">
+            .NET · AWS · Azure · Microservices · AI · Data Platforms
+        </div>
+
+        <p class="hero-description">
+            Software engineering leader focused on designing and building
+            scalable enterprise platforms, cloud-native applications,
+            distributed systems and AI-assisted engineering solutions.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button button-primary"
+                href="#projects">
+                Explore My Work
+            </a>
+
+            <a
+                class="button"
+                href="https://github.com/SandeshSarfare"
+                target="_blank">
+                GitHub
+            </a>
+
+            <!-- Replace # with your actual resume PDF later -->
+            <a
+                class="button"
+                href="#contact">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                About
             </div>
 
-            <h1>
-                Building scalable software,
-                cloud platforms & AI-powered solutions.
-            </h1>
-
-            <h2>
-                .NET · AWS · Azure · AI · Microservices · Distributed Systems
+            <h2 class="section-title">
+                Engineering with architecture in mind.
             </h2>
 
-            <p>
-                Software engineering leader with extensive experience designing
-                cloud-native applications, distributed systems, APIs,
-                microservices and enterprise platforms.
-            </p>
+        </div>
 
-            <div class="buttons">
-                <a class="button primary" href="#projects">
-                    View Projects
-                </a>
 
-                <a class="button"
-                   href="https://github.com/SandeshSarfare"
-                   target="_blank">
-                    GitHub
-                </a>
+        <div class="about-grid">
 
-                <a class="button"
-                   href="#contact">
-                    Contact Me
-                </a>
+            <div class="about-card">
+
+                <p>
+                    I specialize in designing and developing enterprise
+                    software systems where scalability, reliability,
+                    maintainability and security are first-class concerns.
+                </p>
+
+                <p>
+                    My experience spans backend engineering, cloud
+                    architecture, microservices, APIs, data platforms,
+                    DevOps and modern AI-assisted software development.
+                </p>
+
+                <p>
+                    I enjoy working across the engineering lifecycle —
+                    from architecture and technical strategy through
+                    implementation, automation, testing and production
+                    operations.
+                </p>
+
+            </div>
+
+
+            <div class="about-card stat-card">
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        Principal Engineer
+                    </div>
+
+                    <div class="stat-label">
+                        Software Architecture & Engineering
+                    </div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        Cloud Native
+                    </div>
+
+                    <div class="stat-label">
+                        AWS · Azure · Distributed Systems
+                    </div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-number">
+                        AI + Automation
+                    </div>
+
+                    <div class="stat-label">
+                        Generative AI · AI-SDLC · Developer Productivity
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ABOUT -->
+<!-- ================= EXPERTISE ================= -->
 
-    <section id="about">
-        <div class="container">
+<section id="expertise">
 
-            <h2 class="section-title">About Me</h2>
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Expertise
+            </div>
+
+            <h2 class="section-title">
+                Areas I work across
+            </h2>
 
             <p class="section-description">
-                I am a Principal Software Engineer and Solution Architect
-                focused on building reliable, scalable and maintainable
-                enterprise software.
-
-                My experience spans backend engineering, cloud architecture,
-                microservices, APIs, data platforms, DevOps and modern
-                AI-assisted software development.
+                Combining software engineering, architecture, cloud,
+                data and AI to solve complex enterprise problems.
             </p>
 
         </div>
-    </section>
 
 
-    <!-- EXPERIENCE -->
+        <div class="expertise-grid">
 
-    <section id="experience">
-        <div class="container">
+            <div class="expertise-card">
 
-            <h2 class="section-title">Experience</h2>
+                <div class="expertise-icon">🏗️</div>
 
-            <div class="experience">
+                <h3>Solution Architecture</h3>
 
-                <h3>Principal Software Engineer</h3>
+                <p>
+                    Designing scalable application architectures,
+                    APIs, microservices and enterprise platforms.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="expertise-icon">☁️</div>
+
+                <h3>Cloud Architecture</h3>
+
+                <p>
+                    Cloud-native workloads, AWS, Azure, infrastructure
+                    automation and production engineering.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="expertise-icon">⚙️</div>
+
+                <h3>Distributed Systems</h3>
+
+                <p>
+                    Event-driven architectures, APIs, CDC, synchronization,
+                    scalability and resilient services.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="expertise-icon">🤖</div>
+
+                <h3>AI Engineering</h3>
+
+                <p>
+                    Generative AI, LLM integration, AI-assisted development,
+                    automation and AI-SDLC workflows.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="expertise-icon">📊</div>
+
+                <h3>Data Platforms</h3>
+
+                <p>
+                    Data synchronization, analytics, Databricks,
+                    DynamoDB and enterprise data workflows.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <div class="expertise-icon">🔐</div>
+
+                <h3>Enterprise Engineering</h3>
+
+                <p>
+                    Security, testing, observability, CI/CD and
+                    maintainable production-grade software.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Experience
+            </div>
+
+            <h2 class="section-title">
+                Professional journey
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2022 — Present
+                </div>
+
+                <h3>
+                    Principal Software Engineer
+                </h3>
 
                 <div class="company">
                     Greenway Health
                 </div>
 
-                <div class="date">
-                    2022 – Present
-                </div>
-
                 <p>
-                    Architecture and development of cloud-native healthcare
-                    platforms using .NET, Angular, AWS, Databricks,
-                    microservices and modern engineering practices.
+                    Leading architecture and development of cloud-native
+                    healthcare platforms using .NET, Angular, AWS,
+                    Databricks, microservices and modern engineering
+                    practices. Working across architecture, technical
+                    leadership, automation and AI-assisted development.
                 </p>
 
             </div>
 
-            <div class="experience">
 
-                <h3>Senior Software Engineering Roles</h3>
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    Previous Experience
+                </div>
+
+                <h3>
+                    Senior Software Engineering & Architecture Roles
+                </h3>
 
                 <div class="company">
-                    Enterprise Healthcare, Banking & Technology Projects
+                    Healthcare · Banking · Enterprise Technology
                 </div>
 
                 <p>
-                    Experience across healthcare, banking, enterprise
-                    applications, automation and cloud-based platforms.
+                    Experience delivering enterprise applications,
+                    healthcare platforms, banking automation, APIs,
+                    cloud solutions and distributed software systems.
                 </p>
 
             </div>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- SKILLS -->
+<!-- ================= PROJECTS ================= -->
 
-    <section id="skills">
-        <div class="container">
+<section id="projects">
 
-            <h2 class="section-title">Technology</h2>
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Selected Work
+            </div>
+
+            <h2 class="section-title">
+                Projects & engineering initiatives
+            </h2>
 
             <p class="section-description">
-                Technologies and engineering areas I work with.
+                A selection of technical areas and products that demonstrate
+                architecture, engineering and problem-solving.
             </p>
 
-            <div class="skills">
+        </div>
 
-                <span class="skill">C#</span>
-                <span class="skill">.NET</span>
-                <span class="skill">ASP.NET Core</span>
-                <span class="skill">Microservices</span>
-                <span class="skill">REST APIs</span>
-                <span class="skill">AWS</span>
-                <span class="skill">Azure</span>
-                <span class="skill">Angular</span>
-                <span class="skill">React</span>
-                <span class="skill">Blazor</span>
-                <span class="skill">Docker</span>
-                <span class="skill">Terraform</span>
-                <span class="skill">Jenkins</span>
-                <span class="skill">DynamoDB</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Databricks</span>
-                <span class="skill">AI / LLM</span>
-                <span class="skill">Generative AI</span>
-                <span class="skill">Prompt Engineering</span>
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    01 · AI ENGINEERING
+                </div>
+
+                <h3>
+                    AI-SDLC & Developer Automation
+                </h3>
+
+                <p>
+                    AI-assisted software engineering workflows covering
+                    requirements, BDD, test generation, automation and
+                    developer productivity.
+                </p>
+
+                <div class="project-tags">
+                    <span class="project-tag">Generative AI</span>
+                    <span class="project-tag">LLM</span>
+                    <span class="project-tag">Ollama</span>
+                    <span class="project-tag">Reqnroll</span>
+                    <span class="project-tag">Automation</span>
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    02 · DATA ENGINEERING
+                </div>
+
+                <h3>
+                    CDC & Data Synchronization Platform
+                </h3>
+
+                <p>
+                    Engineering workflows for change data capture,
+                    backfill processing, synchronization, checkpoints
+                    and distributed data movement.
+                </p>
+
+                <div class="project-tags">
+                    <span class="project-tag">CDC</span>
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">DynamoDB</span>
+                    <span class="project-tag">Data Platforms</span>
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    03 · HEALTHCARE
+                </div>
+
+                <h3>
+                    Cloud-Native Healthcare Platforms
+                </h3>
+
+                <p>
+                    Enterprise healthcare applications combining
+                    microservices, APIs, cloud infrastructure,
+                    modern web/mobile experiences and data platforms.
+                </p>
+
+                <div class="project-tags">
+                    <span class="project-tag">.NET</span>
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">Angular</span>
+                    <span class="project-tag">MAUI</span>
+                    <span class="project-tag">Microservices</span>
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    04 · PRODUCT
+                </div>
+
+                <h3>
+                    Property Auction Platform
+                </h3>
+
+                <p>
+                    Designing a modern property auction platform focused
+                    on property discovery, auction intelligence,
+                    user workflows and digital transactions.
+                </p>
+
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">AWS</span>
+                    <span class="project-tag">Next.js</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ARCHITECTURE ================= -->
+
+<section class="architecture">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Architecture
+            </div>
+
+            <h2 class="section-title">
+                How I approach enterprise systems
+            </h2>
+
+            <p class="section-description">
+                From user experience to APIs, services, data and cloud
+                infrastructure — architecture connects the entire system.
+            </p>
+
+        </div>
+
+
+        <div class="architecture-box">
+
+            <div class="architecture-flow">
+
+                <div class="architecture-node">
+                    <strong>Web / Mobile</strong>
+                    <small>Angular · React · MAUI</small>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <strong>API / BFF</strong>
+                    <small>.NET · REST</small>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <strong>Services</strong>
+                    <small>Microservices</small>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <strong>Data</strong>
+                    <small>SQL · DynamoDB</small>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="architecture-node">
+                    <strong>Cloud</strong>
+                    <small>AWS · Azure</small>
+                </div>
 
             </div>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- PROJECTS -->
+<!-- ================= TECHNOLOGY ================= -->
 
-    <section id="projects">
-        <div class="container">
+<section id="technology">
 
-            <h2 class="section-title">Featured Projects</h2>
+    <div class="container">
 
-            <p class="section-description">
-                Selected engineering projects and technical initiatives.
-            </p>
+        <div class="section-heading">
 
-            <div class="grid">
+            <div class="section-label">
+                Technology
+            </div>
 
-                <div class="card">
-                    <h3>AI-SDLC & Automation</h3>
-                    <p>
-                        Exploring AI-assisted software development,
-                        automated testing, BDD and developer productivity
-                        workflows.
-                    </p>
+            <h2 class="section-title">
+                Tools & technologies
+            </h2>
+
+        </div>
+
+
+        <div class="tech-groups">
+
+
+            <div class="tech-group">
+
+                <h3>Backend & Architecture</h3>
+
+                <div class="tech-list">
+
+                    <span class="tech">C#</span>
+                    <span class="tech">.NET</span>
+                    <span class="tech">ASP.NET Core</span>
+                    <span class="tech">Web API</span>
+                    <span class="tech">Microservices</span>
+                    <span class="tech">REST</span>
+                    <span class="tech">BFF</span>
+
                 </div>
 
-                <div class="card">
-                    <h3>Cloud-Native Healthcare Platforms</h3>
-                    <p>
-                        Enterprise healthcare applications built using
-                        cloud-native architecture, microservices and
-                        modern .NET technologies.
-                    </p>
+            </div>
+
+
+            <div class="tech-group">
+
+                <h3>Cloud & DevOps</h3>
+
+                <div class="tech-list">
+
+                    <span class="tech">AWS</span>
+                    <span class="tech">Azure</span>
+                    <span class="tech">Terraform</span>
+                    <span class="tech">Jenkins</span>
+                    <span class="tech">Docker</span>
+                    <span class="tech">CI/CD</span>
+
                 </div>
 
-                <div class="card">
-                    <h3>CDC & Data Platforms</h3>
-                    <p>
-                        Data synchronization, change data capture,
-                        backfill processing and distributed data workflows.
-                    </p>
+            </div>
+
+
+            <div class="tech-group">
+
+                <h3>Frontend & Mobile</h3>
+
+                <div class="tech-list">
+
+                    <span class="tech">Angular</span>
+                    <span class="tech">React</span>
+                    <span class="tech">Next.js</span>
+                    <span class="tech">Blazor</span>
+                    <span class="tech">MAUI</span>
+
                 </div>
 
-                <div class="card">
-                    <h3>Property Auction Platform</h3>
-                    <p>
-                        A modern property auction platform designed for
-                        discovery, property intelligence and digital
-                        transactions.
-                    </p>
+            </div>
+
+
+            <div class="tech-group">
+
+                <h3>Data & AI</h3>
+
+                <div class="tech-list">
+
+                    <span class="tech">Databricks</span>
+                    <span class="tech">DynamoDB</span>
+                    <span class="tech">SQL</span>
+                    <span class="tech">Generative AI</span>
+                    <span class="tech">LLMs</span>
+                    <span class="tech">Prompt Engineering</span>
+                    <span class="tech">Ollama</span>
+
                 </div>
 
             </div>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
-    <section id="contact">
-        <div class="container">
+<section id="contact" class="contact">
 
-            <h2 class="section-title">Let's Connect</h2>
+    <div class="container contact-content">
 
-            <p class="section-description">
-                Interested in software architecture, cloud engineering,
-                AI-assisted development or enterprise technology?
-            </p>
+        <div class="section-label">
+            Contact
+        </div>
 
-            <div class="buttons">
+        <h2 class="section-title">
+            Let's connect.
+        </h2>
 
-                <a class="button primary"
-                   href="https://github.com/SandeshSarfare"
-                   target="_blank">
-                    GitHub
-                </a>
+        <p class="section-description">
+            I'm interested in conversations around software architecture,
+            cloud engineering, AI-assisted development, enterprise
+            platforms and challenging engineering problems.
+        </p>
 
-                <a class="button"
-                   href="https://www.linkedin.com/"
-                   target="_blank">
-                    LinkedIn
-                </a>
+        <div class="buttons" style="justify-content:center;">
 
-            </div>
+            <a
+                class="button button-primary"
+                href="https://github.com/SandeshSarfare"
+                target="_blank">
+                GitHub
+            </a>
+
+            <!-- Replace this URL with your LinkedIn profile -->
+            <a
+                class="button"
+                href="https://www.linkedin.com/"
+                target="_blank">
+                LinkedIn
+            </a>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 </main>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    © 2026 Sandesh Sarfare. Built with GitHub Pages.
+
+    <div class="container">
+
+        © 2026 Sandesh Sarfare · Principal Software Engineer & Solution Architect
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
