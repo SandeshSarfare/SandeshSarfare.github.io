@@ -23,7 +23,7 @@ nav{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.86);backdrop-filte
 .logo{font-size:20px;font-weight:800}.logo span{color:var(--blue)}
 .links{display:flex;gap:25px}.links a{font-size:14px;color:var(--muted)}.links a:hover{color:white}
 .hero{min-height:calc(100vh - 70px);display:flex;align-items:center}
-.hero-content{padding:90px 0;max-width:980px}
+.hero-wrap{display:flex;align-items:center;justify-content:space-between;gap:55px}.hero-content{padding:90px 0;max-width:820px}.profile-wrap{text-align:center;min-width:220px}.profile-photo{width:190px;height:190px;border-radius:50%;object-fit:cover;border:1px solid #30445e;box-shadow:0 0 0 10px rgba(96,165,250,.05),0 20px 60px rgba(0,0,0,.35)}.profile-caption{margin-top:14px;color:#7f90a7;font-size:12px;font-weight:700;letter-spacing:.5px}
 .eyebrow{display:inline-block;border:1px solid #2c405b;border-radius:999px;padding:7px 14px;color:#93c5fd;font-size:13px;font-weight:700;margin-bottom:25px;background:rgba(15,23,42,.5)}
 h1{font-size:clamp(45px,7vw,80px);line-height:1.02;letter-spacing:-3px;margin-bottom:25px}
 .gradient{background:linear-gradient(90deg,#f5f7fb,#93c5fd,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -57,7 +57,7 @@ section{padding:95px 0;border-top:1px solid rgba(255,255,255,.055)}
 .edu-grid,.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.edu,.cert{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}.edu h3,.cert h3{font-size:18px}.edu p,.cert p{color:var(--muted);font-size:14px;margin-top:5px}
 .contact{text-align:center}.contact .desc{margin:0 auto}
 footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:center;color:#65748a;font-size:13px}
-@media(max-width:850px){.links{display:none}.grid2,.grid3,.project-grid,.tech-grid,.edu-grid,.cert-grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero{min-height:auto}.hero-content{padding:70px 0}section{padding:75px 0}}
+@media(max-width:850px){.links{display:none}.hero-wrap{flex-direction:column;align-items:flex-start}.profile-wrap{display:none}.grid2,.grid3,.project-grid,.tech-grid,.edu-grid,.cert-grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero{min-height:auto}.hero-content{padding:70px 0}section{padding:75px 0}}
 </style>
 </head>
 <body>
@@ -71,7 +71,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:cent
 
 <main>
 <section class="hero">
-<div class="container hero-content">
+<div class="container hero-wrap">
+<div class="hero-content">
   <div class="eyebrow">Principal Software Engineer · Cloud Solutions Architect · AI-Enabled Full Stack Engineer</div>
   <h1>Engineering <span class="gradient">cloud-native, distributed and AI-enabled</span> enterprise platforms.</h1>
   <h2>.NET 8 · AWS · Terraform · Microservices · Data Platforms · AI</h2>
@@ -80,7 +81,13 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:cent
     <a class="btn primary" href="#projects">Explore My Work</a>
     <a class="btn" href="https://github.com/SandeshSarfare" target="_blank">GitHub</a>
     <a class="btn" href="https://www.linkedin.com/in/sandesh-s-32a995ab/" target="_blank">LinkedIn</a>
+    <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
   </div>
+</div>
+<div class="profile-wrap">
+  <img class="profile-photo" src="https://github.com/SandeshSarfare.png" alt="Sandesh Sarfare">
+  <div class="profile-caption">Principal Engineering · Cloud · AI</div>
+</div>
 </div>
 </section>
 
@@ -130,26 +137,138 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:cent
 </div></section>
 
 <section id="projects"><div class="container">
-  <div class="label">Selected Work</div><h2 class="title">Projects & engineering initiatives</h2>
-  <p class="desc">Selected work based on the current professional profile.</p>
+  <div class="label">Selected Experience</div>
+  <h2 class="title">Architecture & engineering contributions</h2>
+  <p class="desc">Selected areas of professional contribution, described at a high level without publishing confidential company implementation details.</p>
+
   <div class="project-grid">
-    <article class="project"><div class="number">01 · AI ENGINEERING</div><h3>AI-SDLC & Novare</h3><p>Applied AI-assisted requirements analysis, solution design, architecture, code generation, review, testing, documentation and developer productivity across the Novare lifecycle. Led the mobile and application platform architecture using .NET MAUI, C#, REST APIs and microservices.</p><div class="tags"><span class="tag">AI-SDLC</span><span class="tag">.NET MAUI</span><span class="tag">C#</span><span class="tag">REST</span><span class="tag">Microservices</span></div></article>
-    <article class="project"><div class="number">02 · ANALYTICS</div><h3>Greenway Revenue Analytics</h3><p>Led enterprise analytics and reporting capabilities with scalable data-processing workflows, cloud-native reporting and CI/CD automation.</p><div class="tags"><span class="tag">AWS</span><span class="tag">QuickSight</span><span class="tag">PySpark</span><span class="tag">EMR Serverless</span><span class="tag">Terraform</span><span class="tag">Jenkins</span></div></article>
-    <article class="project"><div class="number">03 · CLOUD MODERNIZATION</div><h3>Greenway Clearinghouse Services</h3><p>Led migration of enterprise infrastructure from on-premises systems to AWS and delivered serverless services, Angular applications and Cypress automation.</p><div class="tags"><span class="tag">.NET 8</span><span class="tag">AWS Lambda</span><span class="tag">S3</span><span class="tag">SES</span><span class="tag">Angular</span><span class="tag">Cypress</span></div></article>
-    <article class="project"><div class="number">04 · DATA SCIENCE</div><h3>Clinical Risk Intelligence Platform</h3><p>Master's major project focused on predictive analytics for healthcare decision support, including risk-factor identification, feature engineering, statistical analysis and model evaluation.</p><div class="tags"><span class="tag">Machine Learning</span><span class="tag">Predictive Analytics</span><span class="tag">Healthcare</span><span class="tag">Data Science</span></div></article>
+
+    <article class="project">
+      <div class="number">01 · AI-ENABLED ENGINEERING</div>
+      <h3>AI-Assisted Software Development</h3>
+      <p>
+        Applied AI-SDLC practices across enterprise software delivery,
+        including requirements analysis, solution design, architecture,
+        code generation, review, testing, documentation and developer
+        productivity.
+      </p>
+      <div class="tags">
+        <span class="tag">AI-SDLC</span>
+        <span class="tag">Generative AI</span>
+        <span class="tag">C#</span>
+        <span class="tag">.NET</span>
+        <span class="tag">Automation</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="number">02 · CLOUD ARCHITECTURE</div>
+      <h3>Cloud-Native Enterprise Platforms</h3>
+      <p>
+        Designed and developed scalable enterprise platforms using
+        .NET, AWS, microservices, REST APIs, serverless services,
+        infrastructure as code and cloud security practices.
+      </p>
+      <div class="tags">
+        <span class="tag">.NET 8</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Microservices</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Serverless</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="number">03 · DATA & ANALYTICS</div>
+      <h3>Enterprise Analytics & Data Engineering</h3>
+      <p>
+        Built cloud-native analytics and data-processing workflows,
+        contributing to reporting platforms, data pipelines,
+        orchestration and analytics experiences.
+      </p>
+      <div class="tags">
+        <span class="tag">PySpark</span>
+        <span class="tag">AWS</span>
+        <span class="tag">QuickSight</span>
+        <span class="tag">Data Pipelines</span>
+        <span class="tag">Python</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="number">04 · CLOUD MODERNIZATION</div>
+      <h3>Enterprise Cloud Migration & Modernization</h3>
+      <p>
+        Contributed to modernization and migration of enterprise
+        workloads toward cloud-native architectures, including
+        serverless solutions, automation, security and CI/CD.
+      </p>
+      <div class="tags">
+        <span class="tag">AWS</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Jenkins</span>
+        <span class="tag">Docker</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="number">05 · ARCHITECTURE LEADERSHIP</div>
+      <h3>Solution Architecture & Platform Engineering</h3>
+      <p>
+        Defined application boundaries, service responsibilities,
+        integration patterns, API contracts, data flows, security
+        considerations and non-functional requirements.
+      </p>
+      <div class="tags">
+        <span class="tag">Solution Architecture</span>
+        <span class="tag">BFF</span>
+        <span class="tag">APIs</span>
+        <span class="tag">Distributed Systems</span>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="number">06 · DATA SCIENCE</div>
+      <h3>Healthcare Predictive Analytics Research</h3>
+      <p>
+        Academic M.Sc. Data Science project exploring predictive
+        analytics for healthcare decision support, including feature
+        engineering, statistical analysis and model evaluation.
+      </p>
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Predictive Analytics</span>
+        <span class="tag">Healthcare</span>
+        <span class="tag">Data Science</span>
+      </div>
+    </article>
+
   </div>
 </div></section>
 
 <section class="arch"><div class="container">
-  <div class="label">Architecture</div><h2 class="title">A cloud-native architecture mindset</h2>
-  <p class="desc">A simplified view of the layers represented across the platforms in the profile.</p>
-  <div class="flow"><div class="flow-row">
-    <div class="node"><strong>Web / Mobile</strong><small>Blazor · Angular · MAUI</small></div><div class="arrow">→</div>
-    <div class="node"><strong>API / BFF</strong><small>.NET · REST</small></div><div class="arrow">→</div>
-    <div class="node"><strong>Services</strong><small>Microservices</small></div><div class="arrow">→</div>
-    <div class="node"><strong>Events</strong><small>SQS · SNS · EventBridge</small></div><div class="arrow">→</div>
-    <div class="node"><strong>Data / Analytics</strong><small>DynamoDB · PySpark</small></div>
-  </div></div>
+  <div class="label">Architecture</div>
+  <h2 class="title">Illustrative cloud-native architecture</h2>
+  <p class="desc">
+    A generic architecture pattern representing the engineering concepts
+    I work with. This is illustrative and does not represent any employer's
+    internal architecture.
+  </p>
+
+  <div class="flow">
+    <div class="flow-row">
+      <div class="node"><strong>Web / Mobile</strong><small>Angular · React · MAUI</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>API / BFF</strong><small>.NET · REST</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Services</strong><small>Microservices</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Events</strong><small>Async Messaging</small></div>
+      <div class="arrow">→</div>
+      <div class="node"><strong>Data</strong><small>Cloud Data Services</small></div>
+    </div>
+  </div>
 </div></section>
 
 <section id="technology"><div class="container">
@@ -189,6 +308,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:35px 0;text-align:cent
   </div>
 </div></section>
 </main>
+
+<div class="container" style="padding-top:22px;color:#64748b;font-size:12px;text-align:center;">
+  Portfolio project descriptions are intentionally high-level and focus on professional contributions,
+  skills and technologies rather than confidential employer information.
+</div>
 
 <footer>© 2026 Sandesh Sarfare · Principal Software Engineer · Cloud Solutions Architect</footer>
 </body>
